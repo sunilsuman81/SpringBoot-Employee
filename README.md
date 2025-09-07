@@ -1,10 +1,13 @@
+
 # Spring Boot Employee Management Application
 
-A CRUD web application for managing employees, built with Spring Boot 3.5.5, Java 17, Spring Data JPA, Thymeleaf, and MySQL. Includes login authentication and a Bootstrap-styled UI.
+A CRUD web application for managing employees, built with Spring Boot 3.5.5, Java 17, Spring Data JPA, Thymeleaf, and MySQL. Includes user registration, login authentication, and a Bootstrap-styled UI.
+
 
 ## Features
 - Employee CRUD: Add, update, delete, and list employees
-- Login page with hardcoded credentials (admin/password)
+- User registration and login (with database-backed credentials)
+- New users must register before logging in
 - Confirmation dialog for employee deletion
 - Responsive UI with Bootstrap
 - REST API endpoints for employee operations
@@ -45,9 +48,10 @@ A CRUD web application for managing employees, built with Spring Boot 3.5.5, Jav
    ```
 4. Access the app at [http://localhost:8080/login](http://localhost:8080/login)
 
-### Login Credentials
-- **Username:** admin
-- **Password:** password
+
+### User Registration & Login
+- If you are a new user, click the "Register" link on the login page and create an account.
+- After registration, log in with your chosen username and password.
 
 ## Project Structure
 ```
@@ -65,7 +69,10 @@ src/
       application.properties
 ```
 
+
 ## API Endpoints
+- `/login` - Login page
+- `/register` - User registration page
 - `/employees/list` - List all employees
 - `/employees/showFormForAdd` - Add employee form
 - `/employees/showFormForUpdate/{id}` - Update employee form
